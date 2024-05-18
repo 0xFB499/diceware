@@ -67,7 +67,7 @@ def main():
 
     tree = {}
     with args.wordlist as f:
-        r = re.compile(f"\d{ {DICE_ROLLS} } \w*")
+        r = re.compile(f"\\d{ {DICE_ROLLS} } \\w*")
         for line in f:
             if r.match(line) is not None:
                 add(tree, line[:DICE_ROLLS], line[DICE_ROLLS+1:-1])
